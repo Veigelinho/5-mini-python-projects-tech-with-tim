@@ -1,2 +1,2 @@
-character = "character"
-print(type(character).value())
+import random
+
