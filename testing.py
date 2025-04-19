@@ -1,2 +1,3 @@
-import random
+upperstring = "hello"
+print(upperstring.capitalize())
 

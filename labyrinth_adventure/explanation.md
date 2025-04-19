@@ -1,0 +1,1 @@
+This game is a simplified version of a "Choose Your Own Adventure" game, happening within a labyrinth.
