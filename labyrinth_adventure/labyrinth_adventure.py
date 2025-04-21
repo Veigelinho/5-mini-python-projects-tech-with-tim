@@ -33,7 +33,6 @@ def staging_area():
 
 
 def play(path_choice):
-    
     if path_choice == "r":
         red_path()
     
@@ -52,23 +51,110 @@ def play(path_choice):
 
 
 def green_path():
-    print("green path")
+    print("Green Path")
 
 
 def red_path():
-    print ("red path")
+    print ("Red Path")
 
 
 def yellow_path():
-    print("yellow path")
+    print("Yellow Path")
+    print("""\nAt first you walk down a long corridor. Then you come a to a crossing with three paths.
+You hear some pleasant café music playing from the left.
+You hear two women laughing from the right.
+You look foward and can see a yellow tree with glitter in the distance
+""")
+    input_correct = False
+    while not input_correct:
+        player_choice = input("Where do you go? Press l for left, r for right or s for straight. > ").lower()
+        
+        if player_choice not in ("l", "r", "s"):
+            print("Invalid Choice.")
+        
+        else:
+            input_correct = True
+            if player_choice == "l":
+                print("""\nYou follow the music. As you walk town the hall, the music get louder and louder" \
+You walk around a corner and see a bright, round room, with a small table in the middle.
+On the table, there is a radio, and a small box.
+What do you first do? Turn off the radio? Or open the box?""")
+                input_correct = False
+                while not input_correct:
+                    player_choice = input("Press r for radio or b for box. > ").lower()
+                    if player_choice not in ("r", "b"):
+                        print("Invalid Choice.")
+                    else:
+                        input_correct = True
+                        pass # Add if statement for radio and box
+            elif player_choice == "r":
+                print("""\nThe laughter has spiked your interest. As you follow the path, you make a turn around the corner.
+The laughter has suddenly stopped.
+\nYou see a big forest in front of you, with thousands of animals you have never seen.                      
+There is a small river and a boat on top of it. The river flows from right to left.
+On the right, you see a huge waterfall, and a cave just behind it.
+Do you take the boat to the left, or walk towards the cave?""")
+                input_correct = False
+                while not input_correct:
+                    player_choice = input("Press b for boat or c for cave. > ").lower()
+                    if player_choice not in ("b", "c"):
+                        print("Invalid Choice.")
+                    else:
+                        input_correct = True
+                        if player_choice == "b":
+                            print("""\nYou enter the boat. You start going down the stream. For some reason, the boat gets faster and faster
+
+You realize you are headed straight for a waterfall. It's to late. You fall down the waterfall and die.
+""")
+                            # Add game over function.
+                        else:
+                            print("\nYou start walking towards a waterfall. On the way there, you walk past a banana tree.")
+                            player_choice = input("Do you take some bananas with you? Type y for yes or n for no. > ").lower()
+                            input_correct = True
+                            while not input_correct:
+                                if player_choice not in ("y", "n"):
+                                    print("Invalid Choice.")
+                                
+                                elif player_choice == "y":
+                                    print("You took 5 bananas with you.")
+                                
+                            print("""\nAlright. You continue waking towards the cave. As you enter, the laughter suddenly begins again.
+The waterfall gets more intense, shutting you inside the cave.
+\nou have no choice but to continue walking. It is dark, but you can still see things clearly.
+You come across a fork in the road. You look to the left and see a portal.
+To your right, you can hear laughter. But you cannot see anything.
+Where do you go?""")
+                            input_correct = False
+                            while not input_correct:
+                                player_choice = input("Type p for portal or l for laughter. >")
+                                if player_choice not in ("p", "l"):
+                                    print("Invalid Choice.")
+                                elif player_choice == "p":
+                                    input_correct = True
+                                    print("""You entered the portal.
+.
+.
+.
+""")
+                                    black_path()
+                                else:
+                                    print("""\nYou continue walking towards the laughter.
+But as you get closer, the laughter slowly turns into barking.
+There are hundreds of Bulldogs. It's too late. They have already seen you.
+\nThey start running towards you, and you have no chance. You die.""")
+                                    # Add game over funtion.                           
+
+            
+
+
 
 
 def black_path():
-    print("black path")
+    print("Black Path")
 
 
 def purple_path():
-    print("purple path")
+    print("Purple Path")
 
 
 wants_to_play = False
